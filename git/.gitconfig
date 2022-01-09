@@ -6,7 +6,7 @@
 [push]
 	default = simple
 [core]
-	editor = vim
+	editor = nano
 	autocrlf = input
 [alias]
 	st = status
@@ -23,3 +23,5 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[submodule]
+	recurse = true
