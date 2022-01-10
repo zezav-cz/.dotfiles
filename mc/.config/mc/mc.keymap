@@ -8,6 +8,9 @@ Complete = tab
 
 
 [editor]
-# MarkColumnLeft =
-# MarkColumnRight =
+MarkColumnLeft =
+MarkColumnRight =
 Complete = tab
+
+[filemanager]
+ChangePanel = alt-left; alt-right
