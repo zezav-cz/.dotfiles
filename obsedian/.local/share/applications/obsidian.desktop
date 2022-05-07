@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Encoding=UTF-8
-Name=Obsidian
-Comment=Note-taking app. A second brain, for you, forever.
-Icon=~/.local/share/applications/icons/obs.png
-Exec=/snap/bin/obsidian
-Terminal=false
-Categories=Notes

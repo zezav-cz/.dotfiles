@@ -6,7 +6,7 @@
 [push]
 	default = simple
 [core]
-	editor = nano
+	editor = vim
 	autocrlf = input
 [alias]
 	st = status
