@@ -1,0 +1,10 @@
+org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+org.gnome.desktop.sound allow-volume-above-100-percent true
+org.gnome.desktop.peripherals.touchpad tap-to-click true
+org.gnome.shell enabled-extensions ['trayIconsReloaded@selfmade.pl']
+org.gnome.desktop.interface show-battery-percentage true
+org.gnome.desktop.interface clock-show-seconds true
+org.gnome.desktop.wm.preferences button-layout 'appmenu:maximize,close'
+org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
+org.gnome.desktop.wm.preferences focus-mode 'click'
+org.gnome.mutter workspaces-only-on-primary false
