@@ -66,7 +66,6 @@ plugins=(
     #history
     #emoji
     #encode64
-    you-should-use
     zsh-syntax-highlighting
     )
 source $ZSH/custom/add_ons/k8sprompt.zsh
@@ -81,6 +80,7 @@ source $ZSH/oh-my-zsh.sh
 RPROMPT='$(kube_ps1)'
 
 alias ll='ls -l '
+alias mc='. /usr/lib/mc/mc-wrapper.sh'
 alias lla='ls -la '
 alias gg='g++ -Wall -pedantic-errors '
 alias ggs='g++ -Wall -pedantic-errors -g -fsanitize=address '
@@ -88,3 +88,5 @@ alias vs='code ./'
 alias py='python3 -q '
 alias hman='function _blah(){ man $1 | grep --color=never "^\S"; };_blah'
 alias t='tmux '
+
+
