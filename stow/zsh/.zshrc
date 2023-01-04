@@ -1,7 +1,7 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/snap/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.local/bin
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 # Uncomment one of the following lines to change the auto-update behavior
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
@@ -53,8 +53,8 @@ plugins=(
     zsh-autosuggestions
     web-search
     sudo
-    jsontools  #usage: pp_json, is_json, 
-    
+    jsontools  #usage: pp_json, is_json,
+    kube-ps1
     #copydir   #usage: copydir
     #copyfile  #usage: copyfile <file>
     copybuffer #usage: ctrl+o
@@ -68,9 +68,9 @@ plugins=(
     #encode64
     zsh-syntax-highlighting
     )
-source $ZSH/custom/add_ons/k8sprompt.zsh
+#source $ZSH/custom/add_ons/k8sprompt.zsh
 source $ZSH/oh-my-zsh.sh
-
+autoload -U compinit && compinit
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -80,7 +80,7 @@ source $ZSH/oh-my-zsh.sh
 RPROMPT='$(kube_ps1)'
 
 alias ll='ls -l '
-alias mc='. /usr/lib/mc/mc-wrapper.sh'
+#alias mc='. /usr/lib/mc/mc-wrapper.sh'
 alias lla='ls -la '
 alias gg='g++ -Wall -pedantic-errors '
 alias ggs='g++ -Wall -pedantic-errors -g -fsanitize=address '
@@ -88,5 +88,5 @@ alias vs='code ./'
 alias py='python3 -q '
 alias hman='function _blah(){ man $1 | grep --color=never "^\S"; };_blah'
 alias t='tmux '
-
+alias x='xdg-open '
 
