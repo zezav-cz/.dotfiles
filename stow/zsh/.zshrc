@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.local/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.local/bin:/usr/local/go/bin
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
@@ -18,7 +18,7 @@ plugins=(
     kubectl
     #dirhistory #usage: alt + arrows
     #osx
-    alias-finder
+    #alias-finder
     #urltools
     #history
     emoji
@@ -31,14 +31,20 @@ autoload -U compinit && compinit
 
 RPROMPT='$(kube_ps1)'
 
-alias ll='ls -l '
+alias l='ls -l '
 #alias mc='. /usr/lib/mc/mc-wrapper.sh'
-alias lla='ls -la '
+alias ll='ls -la '
 alias gg='g++ -Wall -pedantic-errors '
 alias ggs='g++ -Wall -pedantic-errors -g -fsanitize=address '
 alias vs='code ./'
 alias py='python3 -q '
-alias hman='function _blah(){ man $1 | grep --color=never "^\S"; };_blah'
-alias t='tmux '
+alias t='tmux new -As main -c ~'
+alias tk='tmux kill-server'
+alias tmc='tmux new-window -n mc "mc"'
 alias x='xdg-open '
-
+export EDITOR=vim
+alias k9s='podman run --rm -it -v ~/.kube/config:/root/.kube/config quay.io/derailed/k9s'
+export LIBVIRT_DEFAULT_URI="qemu:///system"
+alias tf='terraform '
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform

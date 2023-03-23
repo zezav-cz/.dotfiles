@@ -38,3 +38,4 @@ colorscheme gruvbox
 
 hi TrailingWhitespace ctermbg=red guibg=red
 call matchadd("TrailingWhitespace", '\v\s+$')
+

@@ -83,12 +83,12 @@ editor_backup_extension=~
 editor_filesize_threshold=64M
 editor_stop_format_chars=-+*\\,.;:&>
 mcview_eof=
-skin=dark
+skin=modarin256-defbg
 
 [Layout]
 output_lines=0
 left_panel_size=119
-top_panel_size=25
+top_panel_size=28
 message_visible=true
 keybar_visible=true
 xterm_title=true
