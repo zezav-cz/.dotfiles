@@ -26,7 +26,8 @@ set background=dark
 "set cmdheight=2
 set updatetime=50
 
-
+set timeoutlen=1000
+set ttimeoutlen=50
 
 call plug#begin()
 Plug 'gruvbox-community/gruvbox'

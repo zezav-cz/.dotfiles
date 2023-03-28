@@ -1,0 +1,171 @@
+{
+  //==========================================================
+  //VScode appearance
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+  // This is for making the base-atelier-dune theme looks smooth on the variables
+  "editor.tokenColorCustomizations": {
+    //"variables": "#a6a28c",
+    "comments": "#2ea542",
+  }, //do not show file path at the top of the editor
+  "editor.minimap.enabled": false,
+  //"editor.scrollbar.vertical": "hidden",
+  //"editor.scrollbar.horizontal": "hidden", //not Tested
+  "editor.hideCursorInOverviewRuler": true, //Do not show cursor position on the right hand site of the screen
+  "editor.overviewRulerBorder": false,
+  "editor.glyphMargin": true, //show margin nest to line numbers (for placing breakpoints)
+  "editor.autoClosingBrackets": "never", //do not create closing backers form me
+  "editor.matchBrackets": "never", //do not highlight matching brackets
+  "editor.roundedSelection": true, //use rounded corners when selecting
+  "editor.renderLineHighlight": "none", //do not highlight current line
+  "editor.cursorStyle": "line",
+  "editor.lineNumbers": "relative",
+  "editor.folding": true, //allow folding block of code
+  //"editor.formatOnSave": true,
+  //"diffEditor.renderSideBySide": false,
+  //"editor.insertSpaces": false,
+  //==========================================================
+  // Suggestions
+  "editor.wordBasedSuggestions": false,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  //==========================================================
+  //VIM
+  "vim.enableNeovim": false,
+  "vim.neovimPath": "/usr/bin/nvim",
+  "vim.searchHighlightColor": "rgba(150, 255, 255, 0.3)",
+  "vim.leader": "<space>",
+  "vim.cursorStylePerMode.insert": "line",
+  //"vim.easymotion": true, //not tested
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true, //not tested
+  "vim.hlsearch": true, //not tested
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "commands": [{ "command": "editor.action.showDefinitionPreviewHover" }]
+    },
+    {
+      "before": ["<leader>","w"],
+      "commands": [
+        {
+          "command": "editor.action.toggleRenderWhitespace",
+        }
+      ]
+    },
+    // <space> + p => opens quick open actions
+    {
+      "before": [
+        "<leader>",
+        "p"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.quickOpen"
+        }
+      ]
+    },
+    // <space> + t => focuses terminal
+    {
+      "before": [
+        "<leader>",
+        "t"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.terminal.focus"
+        }
+      ]
+    },
+    /*{
+      "before": [
+        "<leader>",
+        "u"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.focusActiveEditorGroup"
+        }
+      ]
+    },*/
+    //split vertical
+    {
+      "before": [
+        "<leader>",
+        "%"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.splitEditor"
+        }
+      ]
+    },
+    //focus most left group
+    {
+      "before": [
+        "<leader>",
+        "h"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.focusFirstEditorGroup"
+        }
+      ]
+    },
+    //focus second group
+    {
+      "before": [
+        "<leader>",
+        "l"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.focusSecondEditorGroup"
+        }
+      ]
+    },
+    //stop highlighting find results
+    {
+      "before": [
+        "<leader>",
+        "l"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": ":nohl"
+        }
+      ]
+    }
+  ],
+  "files.autoSave": "afterDelay",
+  "editor.inlineSuggest.enabled": true,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": false
+  },
+"redhat.telemetry.enabled": true,
+"editor.renderWhitespace": "all",
+}
