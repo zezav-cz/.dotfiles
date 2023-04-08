@@ -168,4 +168,5 @@
   },
 "redhat.telemetry.enabled": true,
 "editor.renderWhitespace": "all",
+"git.autofetch": true,
 }

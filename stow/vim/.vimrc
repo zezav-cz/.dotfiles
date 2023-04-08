@@ -28,15 +28,3 @@ set updatetime=50
 
 set timeoutlen=1000
 set ttimeoutlen=50
-
-call plug#begin()
-Plug 'gruvbox-community/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-call plug#end()
-colorscheme gruvbox
-"highlight Nomal guibg=none
-
-hi TrailingWhitespace ctermbg=red guibg=red
-call matchadd("TrailingWhitespace", '\v\s+$')
-

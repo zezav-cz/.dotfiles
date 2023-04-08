@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.local/bin:/usr/local/go/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/go/bin
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
@@ -23,6 +23,7 @@ plugins=(
     #history
     emoji
     #encode64
+    zsh-vi-mode
     zsh-syntax-highlighting
     )
 #source $ZSH/custom/add_ons/k8sprompt.zsh
@@ -46,3 +47,9 @@ export LIBVIRT_DEFAULT_URI="qemu:///system"
 alias tf='terraform '
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
+autoload -U compinit; compinit
+alias vim='nvim '
+alias v='nvim . '
+
+
+export EDITOR="/usr/bin/nvim"
