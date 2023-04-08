@@ -23,3 +23,11 @@ require('lualine').setup({
         lualine_x = { tab_info, 'encoding', 'fileformat', 'filetype' }
     }
 })
+
+require('bufferline').setup({
+    options = {
+        indicator = {
+            --icon = "P"
+        }
+    }
+})
