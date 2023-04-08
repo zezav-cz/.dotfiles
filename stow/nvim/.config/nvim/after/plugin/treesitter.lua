@@ -4,6 +4,10 @@ require('nvim-treesitter.configs').setup {
 
     highlight = {
       enable = true,
-      additional_vim_regex_highlighting = false,
+      additional_vim_regex_highlighting = true,
+    },
+    indent = {      -- auto indent when new line ...
+        enable = true,
+        disable = { 'yaml' }
     },
   }
