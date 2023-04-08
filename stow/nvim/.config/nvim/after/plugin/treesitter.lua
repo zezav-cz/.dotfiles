@@ -6,7 +6,7 @@ require('nvim-treesitter.configs').setup {
       enable = true,
       additional_vim_regex_highlighting = true,
     },
-    indent = {      -- auto indent when new line ...
+    indent = {      -- Auto indent when new line ...
         enable = true,
         disable = { 'yaml' }
     },

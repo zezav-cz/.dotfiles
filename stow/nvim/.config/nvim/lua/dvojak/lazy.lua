@@ -75,6 +75,10 @@ require('lazy').setup({
     },
   },
 
+
+
+  'windwp/nvim-autopairs',
+
 --  {
 --    'folke/trouble.nvim',
 --    requires = 'nvim-tree/nvim-web-devicons',
