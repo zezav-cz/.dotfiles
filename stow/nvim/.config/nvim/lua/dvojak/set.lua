@@ -60,4 +60,11 @@ vim.o.smartcase = true
 -- NOTE: You should make sure your terminal supports this
 --vim.o.termguicolors = true
 
-
+vim.opt.listchars = {
+    eol = '↲',      -- End of line
+    tab = '▸ ',     -- Tab character
+    trail = '·',    -- Trailing spaces
+    extends = '»',  -- Beyond the end of the line
+    precedes = '«', -- Before the start of the line
+    space = '␣',    -- Space character
+}
