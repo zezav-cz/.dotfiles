@@ -6,13 +6,13 @@ require('lazy').setup({
     'lukoshkin/trailing-whitespace',
 
     -- ==================== GIT ====================
-    'tpope/vim-fugitive',    --git
+    'tpope/vim-fugitive',      --git
     --'tpope/vim-rhubarb',  --github
     'lewis6991/gitsigns.nvim', -- Adds git releated signs to the gutter, as well as utilities for managing changes
 
     -- =============== FILE EXPLORER ===============
     {
-    -- Fuzzy Finder (files, lsp, etc)
+        -- Fuzzy Finder (files, lsp, etc)
         'nvim-telescope/telescope.nvim',
         version = '*',
         dependencies = { 'nvim-lua/plenary.nvim' }
@@ -40,7 +40,7 @@ require('lazy').setup({
             -- LSP Support
             { 'neovim/nvim-lspconfig' }, -- Required
             {
-                                 -- Optional
+                -- Optional
                 'williamboman/mason.nvim',
                 build = function()
                     pcall(vim.cmd, 'MasonUpdate')
@@ -48,9 +48,9 @@ require('lazy').setup({
             },
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },          -- Required
-            { 'hrsh7th/cmp-nvim-lsp' },      -- Required
-            { 'L3MON4D3/LuaSnip' },          -- Required
+            { 'hrsh7th/nvim-cmp' },                  -- Required
+            { 'hrsh7th/cmp-nvim-lsp' },              -- Required
+            { 'L3MON4D3/LuaSnip' },                  -- Required
         }
     },
     {
@@ -65,7 +65,7 @@ require('lazy').setup({
 
     -- ================== EDITOR ==================
     {
-    -- Set lualine as statusline
+        -- Set lualine as statusline
         'nvim-lualine/lualine.nvim',
         -- See `:help lualine.txt`
         opts = {
@@ -79,9 +79,15 @@ require('lazy').setup({
     },
 
 
-
+    {
+        "nvim-tree/nvim-tree.lua",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+    },
     'windwp/nvim-autopairs',
     'akinsho/bufferline.nvim',
+    '/preservim/tagbar',
     --  {
     --    'folke/trouble.nvim',
     --    requires = 'nvim-tree/nvim-web-devicons',
