@@ -1,25 +1,31 @@
+-- Install package manager
+--    https://github.com/folke/lazy.nvim
+--    `:help lazy.nvim.txt` for more info
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system {
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
+    lazypath,
+  }
+end
+vim.opt.rtp:prepend(lazypath)
+
 require('lazy').setup({
-
+    -- ============================================
+    -- ==================== UI ====================
     'mbbill/undotree',
-    'navarasu/onedark.nvim', -- Theme inspired by Atom
-    --'tpope/vim-sleuth',     -- Detect tabstop and shiftwidth automatically,
-    'lukoshkin/trailing-whitespace',
+    'navarasu/onedark.nvim',
+    'folke/zen-mode.nvim',
+    -- GIT
+    'tpope/vim-fugitive',
+    'lewis6991/gitsigns.nvim',
 
-    -- ==================== GIT ====================
-    'tpope/vim-fugitive',      --git
-    --'tpope/vim-rhubarb',  --github
-    'lewis6991/gitsigns.nvim', -- Adds git releated signs to the gutter, as well as utilities for managing changes
-
-    -- =============== FILE EXPLORER ===============
-    {
-        -- Fuzzy Finder (files, lsp, etc)
-        'nvim-telescope/telescope.nvim',
-        version = '*',
-        dependencies = { 'nvim-lua/plenary.nvim' }
-    },
-    'theprimeagen/harpoon',
-
-    -- ===== HIGHLIGHT, EDIT, AND NAVIGATE CODE ====
+    -- ============================================
+    -- ================ TREESITTER ================
     {
         'nvim-treesitter/nvim-treesitter',
         dependencies = {
@@ -31,8 +37,8 @@ require('lazy').setup({
     },
     'nvim-treesitter/nvim-treesitter-context', -- keeps last definition (funsciont...) in view
 
-
-    -- ==================== LSP ====================
+    -- ============================================
+    -- =================== LSP ====================
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
@@ -62,8 +68,8 @@ require('lazy').setup({
         end,
     },
 
-
-    -- ================== EDITOR ==================
+    -- ============================================
+    -- =================== EDIT ===================
     {
         -- Set lualine as statusline
         'nvim-lualine/lualine.nvim',
@@ -78,18 +84,16 @@ require('lazy').setup({
         },
     },
 
-
-    {
-        "nvim-tree/nvim-tree.lua",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-    },
     'windwp/nvim-autopairs',
     'akinsho/bufferline.nvim',
-    '/preservim/tagbar',
-    --  {
-    --    'folke/trouble.nvim',
-    --    requires = 'nvim-tree/nvim-web-devicons',
-    --  },
+
+    -- ============================================
+    -- ================== FILES ===================
+    {
+        -- Fuzzy Finder (files, lsp, etc)
+        'nvim-telescope/telescope.nvim',
+        version = '*',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    'theprimeagen/harpoon',
 }, {})
