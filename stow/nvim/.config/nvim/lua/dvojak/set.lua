@@ -28,12 +28,12 @@ vim.opt.updatetime = 50
 
 
 vim.opt.listchars = {
-    eol = '↲',      -- End of line
-    tab = '▸ ',     -- Tab character
-    trail = '·',    -- Trailing spaces
-    extends = '»',  -- Beyond the end of the line
+    eol = '↲',    -- End of line
+    tab = '▸ ',   -- Tab character
+    trail = '·',   -- Trailing spaces
+    extends = '»', -- Beyond the end of the line
     precedes = '«', -- Before the start of the line
-    space = '␣',    -- Space character
+    space = '␣',  -- Space character
 }
 
 vim.opt.colorcolumn = "110"
@@ -48,4 +48,3 @@ vim.o.clipboard = 'unnamedplus'
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
-

@@ -1,10 +1,10 @@
 -- ZEN MODE
-PluginSetUp( function()
+PluginSetUp(function()
     vim.keymap.set("n", "<leader>ez", function()
         require("zen-mode").setup {
             window = {
                 width = 90,
-                options = { }
+                options = {}
             },
         }
         require("zen-mode").toggle()
@@ -16,7 +16,7 @@ PluginSetUp( function()
         require("zen-mode").setup {
             window = {
                 width = 80,
-                options = { }
+                options = {}
             },
         }
         require("zen-mode").toggle()
@@ -25,10 +25,10 @@ PluginSetUp( function()
         vim.wo.rnu = false
         vim.opt.colorcolumn = "0"
     end)
-end, {'zen-mode'} )
+end, { 'zen-mode' })
 
 -- LUA LINE
-PluginSetUp( function()
+PluginSetUp(function()
     local function tab_info()
         local tab_size = vim.bo.tabstop
         local expand_tabs = vim.bo.expandtab
@@ -53,25 +53,26 @@ PluginSetUp( function()
             lualine_x = { tab_info, 'encoding', 'fileformat', 'filetype' }
         }
     })
-end, {'lualine'} )
+end, { 'lualine' })
 
 -- COLORTHEME
-PluginSetUp( function()
+PluginSetUp(function()
     require('onedark').setup {
         style = 'darker'
     }
     require('onedark').load()
-end, {'onedark'} )
+end, { 'onedark' })
 
 -- GIT SIGNS
-PluginSetUp( function()
+PluginSetUp(function()
     require('gitsigns').setup {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
+        signs = {
+            add = { text = '+' },
+            change = { text = '~' },
+            delete = { text = '_' },
+            topdelete = { text = '‾' },
+            changedelete = { text = '~' },
         },
     }
-end, {'gitsigns'} )
+end, { 'gitsigns' })
+

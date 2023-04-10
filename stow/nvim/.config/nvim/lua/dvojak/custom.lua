@@ -20,10 +20,10 @@ function set_tab_options(tab_size, use_spaces)
         vim.bo.expandtab = false
     end
 end
+
 vim.api.nvim_set_keymap('n', '<leader>ts2', ':lua set_tab_options(2, true)<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ts4', ':lua set_tab_options(4, true)<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ts8', ':lua set_tab_options(8, true)<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>tt2', ':lua set_tab_options(2, false)<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>tt4', ':lua set_tab_options(4, false)<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>tt8', ':lua set_tab_options(8, false)<CR>', { noremap = true, silent = true })
-
