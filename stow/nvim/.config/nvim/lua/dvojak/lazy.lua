@@ -20,6 +20,7 @@ require('lazy').setup({
     'mbbill/undotree',
     'navarasu/onedark.nvim',
     'folke/zen-mode.nvim',
+    {'akinsho/bufferline.nvim', version = "v3.*", dependencies = 'nvim-tree/nvim-web-devicons'},
     -- GIT
     'tpope/vim-fugitive',
     'lewis6991/gitsigns.nvim',
@@ -90,7 +91,6 @@ require('lazy').setup({
     },
 
     'windwp/nvim-autopairs',
-    'akinsho/bufferline.nvim',
 
     -- ============================================
     -- ================== FILES ===================

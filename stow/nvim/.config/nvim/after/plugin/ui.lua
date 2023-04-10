@@ -76,3 +76,7 @@ PluginSetUp(function()
     }
 end, { 'gitsigns' })
 
+-- BUFFERLINE
+PluginSetUp(function()
+    require("bufferline").setup{}
+end, { 'bufferline' })
