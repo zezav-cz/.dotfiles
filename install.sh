@@ -1,5 +1,5 @@
 #!/bin/bash
-cd `dirname $0`
+cd `dirname $0`/stow
 
 
 for dir in */ ; do
