@@ -1,0 +1,30 @@
+[user]
+	name = Jan Trojak
+	email = trojakjan24@gmail.com
+    signingkey = AD75696197E5781D
+[commit]
+    gpgsign = true
+[color]
+	ui = auto
+[push]
+	default = simple
+[core]
+	editor = nvim
+	autocrlf = input
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	ll = log --oneline --graph --all --decorate
+[submodule]
+	recurse = true
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

@@ -1,0 +1,111 @@
+// Place your key bindings in this file to override the defaults
+[
+    // TERMINAL
+    {
+        "key": "ctrl+t",
+        "command": "-workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.togglePanel"
+    },
+    // Toggle left panel
+    // Toggle Explorer
+    {
+        "key": "alt+1",
+        "command": "workbench.view.explorer",
+        "when": "!explorerViewletVisible"
+    },
+    {
+        "key": "alt+1",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "explorerViewletVisible"
+    },
+    // Toggle Search
+    {
+        "key": "alt+2",
+        "command": "workbench.view.search",
+        "when": "!searchViewletVisible"
+    },
+    {
+        "key": "alt+2",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "searchViewletVisible"
+    },
+    // Toggle Source Control
+    {
+        "key": "alt+3",
+        "command": "workbench.view.scm",
+        "when": "!scmViewletVisible"
+    },
+    {
+        "key": "alt+3",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "scmViewletVisible"
+    },
+    // Toggle Run & Debug
+    {
+        "key": "alt+4",
+        "command": "workbench.view.debug",
+        "when": "!debugViewletVisible"
+    },
+    {
+        "key": "alt+4",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "debugViewletVisible"
+    },
+    // Toggle Run & Debug
+    {
+        "key": "alt+5",
+        "command": "workbench.panel.chatSidebar.copilot",
+        "when": "!copilotViewletVisible"
+    },
+    {
+        "key": "alt+5",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "copilotViewletVisible"
+    },
+    // quick open
+    {
+        "key": "ctrl+p f",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+w e",
+        "command": "workbench.action.closeActiveEditor",
+    },
+    {
+        "key": "ctrl+w l",
+        "command": "workbench.action.nextEditorInGroup"
+    },
+    {
+        "key": "ctrl+w h",
+        "command": "workbench.action.previousEditorInGroup"
+    },
+    // git graph
+    {
+        "key": "ctrl+g",
+        "command": "-workbench.action.gotoLine"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "git-graph.view"
+    },
+    // split window
+    {
+        "key": "ctrl+w s",
+        "command": "workbench.action.splitEditorDown"
+    },
+    {
+        "key": "ctrl+w v",
+        "command": "workbench.action.splitEditorRight"
+    },
+    {
+        "key": "ctrl+w w", // replace with your preferred key combination for the next group
+        "command": "workbench.action.focusNextGroup"
+    },
+]

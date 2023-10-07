@@ -1,0 +1,6 @@
+[include]
+    path = ~/.config/git/core.gitconfig
+[includeIf "gitdir:~/dev/recombee/"]
+	path = ~/.config/git/recombee.gitconfig
+[includeIf "gitdir:~/dev/fit/"]
+	path = ~/.config/git/fit.gitconfig

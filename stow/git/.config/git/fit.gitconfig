@@ -1,0 +1,6 @@
+[user]
+    name = Jan Trojak
+    email = trojaj12@fit.cvut.com
+    signingkey = 459D72717FCFCFA2
+[commit]
+    gpgsign = true

@@ -1,0 +1,117 @@
+[gnome/control-center]
+last-panel='keyboard'
+window-state=(1139, 852, false)
+
+[gnome/desktop/app-folders]
+folder-children=['Utilities', 'YaST']
+
+[gnome/desktop/app-folders/folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.eog.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'vinagre.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[gnome/desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[gnome/desktop/input-sources]
+sources=[('xkb', 'us'), ('xkb', 'cz+qwerty')]
+xkb-options=@as []
+
+[gnome/desktop/interface]
+clock-show-seconds=true
+color-scheme='prefer-dark'
+enable-hot-corners=false
+font-antialiasing='grayscale'
+font-hinting='slight'
+gtk-theme='Adwaita-dark'
+show-battery-percentage=true
+
+[gnome/desktop/notifications]
+application-children=['code-code', 'gnome-power-panel']
+
+[gnome/desktop/notifications/application/code-code]
+application-id='code_code.desktop'
+
+[gnome/desktop/notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
+
+[gnome/desktop/peripherals/keyboard]
+numlock-state=true
+
+[gnome/desktop/peripherals/touchpad]
+tap-to-click=true
+two-finger-scrolling-enabled=true
+
+[gnome/desktop/search-providers]
+sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
+
+[gnome/desktop/session]
+idle-delay=uint32 300
+
+[gnome/desktop/sound]
+allow-volume-above-100-percent=true
+event-sounds=true
+theme-name='__custom'
+
+[gnome/desktop/wm/keybindings]
+switch-applications=@as []
+switch-applications-backward=@as []
+switch-windows=['<Alt>Tab']
+switch-windows-backward=['<Shift><Alt>Tab']
+
+[gnome/desktop/wm/preferences]
+button-layout='appmenu:minimize,maximize,close'
+focus-mode='click'
+
+[gnome/evince/default]
+window-ratio=(1.0079290417954574, 0.71268217938210454)
+
+[gnome/evolution-data-server]
+migrated=true
+
+[gnome/mutter]
+workspaces-only-on-primary=false
+
+[gnome/nautilus/preferences]
+migrated-gtk-settings=true
+
+[gnome/settings-daemon/plugins/color]
+night-light-enabled=true
+
+[gnome/shell]
+last-selected-power-profile='performance'
+welcome-dialog-last-shown-version='43.4'
+
+[gnome/software]
+check-timestamp=int64 1689106277
+first-run=false
+
+[gtk/gtk4/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=169
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
+window-size=(888, 374)
+
+[gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=true
+show-size-column=true
+show-type-column=true
+sidebar-width=157
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
+window-position=(2278, 65)
+window-size=(1203, 902)

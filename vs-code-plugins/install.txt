@@ -1,0 +1,17 @@
+GitHub.copilot
+GitHub.copilot-chat
+golang.go
+Grafana.vscode-jsonnet
+Gruntfuggly.activitusbar
+Gruntfuggly.todo-tree
+hashicorp.terraform
+mhutchie.git-graph
+ms-python.python
+ms-python.vscode-pylance
+ms-vscode-remote.remote-ssh
+ms-vscode.remote-explorer
+streetsidesoftware.code-spell-checker
+tomphilbin.gruvbox-themes
+vscodevim.vim
+waderyan.gitblame
+wayou.vscode-todo-highlight
