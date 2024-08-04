@@ -4,3 +4,5 @@
 	path = ~/.config/git/recombee.gitconfig
 [includeIf "gitdir:~/dev/fit/"]
 	path = ~/.config/git/fit.gitconfig
+[core]
+	hooksPath = /home/jan/.config/git/hooks

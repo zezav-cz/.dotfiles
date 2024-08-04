@@ -1,0 +1,24 @@
+#!/bin/sh
+# Get the current branch name
+branch_name=$(git branch --show-current)
+
+# Check if the branch name matches the pattern using grep and test
+if echo "$branch_name" | grep -qE '^T[0-9]+[-_].*'; then
+    # Extract the task ID
+    task_id=$(echo "$branch_name" | grep -oE '^T[0-9]+')
+
+    # Temporary file to store the updated commit message
+    TEMP_FILE=$(mktemp)
+
+    # Add "Task: <task_id> - " to the commit message
+    echo "$(cat "$1")" > "$TEMP_FILE"
+    echo "" >> "$TEMP_FILE"
+    echo "Task: $task_id" >> "$TEMP_FILE"
+
+    # Replace the original commit message with the updated one
+    cat "$TEMP_FILE" > "$1"
+
+    # Clean up
+    rm "$TEMP_FILE"
+fi
+

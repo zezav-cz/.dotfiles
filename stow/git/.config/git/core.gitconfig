@@ -1,9 +1,6 @@
 [user]
 	name = Jan Trojak
 	email = trojakjan24@gmail.com
-    signingkey = AD75696197E5781D
-[commit]
-    gpgsign = true
 [color]
 	ui = auto
 [push]

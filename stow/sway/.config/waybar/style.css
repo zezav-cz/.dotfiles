@@ -1,0 +1,132 @@
+/* Reset all styles */
+* {
+    border: none;
+    border-radius: 4;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: "Ubuntu Nerd Font" ;
+}
+
+/* The whole bar */
+#waybar {
+    background: @theme_bg_color;
+    color: @theme_fg_color;
+    font-size: 12px;
+}
+
+#window {
+    margin-left: 10px;
+}
+
+window#waybar {
+    margin-left: 10px;
+    border-radius: 0;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    /* To compensate for the top border and still have vertical centering */
+    padding: 0 0.5em;
+    margin: 0px 3px;
+    color: @wm_icon_bg;
+}
+
+#workspaces button.focused {
+    border-color: @theme_selected_bg_color;
+    color: @wm_icon_bg;
+    background-color: @theme_selected_bg_color;
+}
+
+#workspaces button.urgent {
+    border-color: @error_color;
+    color: @error_color;
+}
+
+#mode {
+    background: @background_color;
+}
+
+#clock,
+#custom-playerctl,
+#custom-power,
+#custom-weather,
+#custom-clipboard,
+#custom-menu,
+#battery,
+#cpu,
+#language,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#mode,
+#idle_inhibitor {
+    padding: 0px 3px;
+    margin: 0px 3px;
+}
+
+#clock {
+    color: @theme_selected_fg_color;
+}
+
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    color: @theme_selected_fg_color;
+}
+
+#battery.warning {
+    color: @warning_color;
+}
+
+#battery.critical {
+    color: @error_color;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    color: @theme_selected_fg_color;
+}
+
+#language {
+    color: @theme_selected_fg_color;
+}
+
+#memory {
+    color: @theme_selected_fg_color;
+}
+
+#network {
+    color: @theme_selected_fg_color;
+}
+
+#network.disconnected {
+    background: @theme_bg_color;
+    color: @wm_icon_bg
+}
+
+#pulseaudio {
+    color: @theme_selected_fg_color;
+}
+
+#pulseaudio.muted {
+    color: @wm_icon_bg;
+}
+
+#tray {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#idle_inhibitor.activated {
+    color: @theme_selected_fg_color;
+}

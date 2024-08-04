@@ -1,7 +1,3 @@
 [user]
     name = Jan Trojak
     email = jan.trojak@recombee.com
-    signingkey = 3947C00C9188BF76
-
-[commit]
-    gpgsign = true

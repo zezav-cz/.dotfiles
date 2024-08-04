@@ -1,0 +1,19 @@
+[Unit]
+Description=Syncthing - Open Source Continuous File Synchronization
+Documentation=https://docs.syncthing.net/
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/syncthing -no-browser -logfile=%h/.config/syncthing/syncthing.log
+Restart=on-failure
+SuccessExitStatus=3 4
+
+# Hardening
+ProtectSystem=full
+PrivateTmp=true
+ProtectHome=false
+NoNewPrivileges=true
+ReadWritePaths=%h/.config/syncthing %h/notes
+
+[Install]
+WantedBy=default.target
