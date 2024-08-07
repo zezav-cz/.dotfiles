@@ -14,7 +14,7 @@
   "editor.tokenColorCustomizations": {
     "comments": "#2ea542",
   },
-  "editor.wordBasedSuggestions": true,
+  "editor.wordBasedSuggestions": "matchingDocuments",
   "editor.acceptSuggestionOnEnter": "on",
   "editor.quickSuggestions": {
     "other": true,
@@ -35,7 +35,6 @@
   "editor.inlineSuggest.enabled": true,
   "files.autoSave": "afterDelay",
   "window.zoomLevel": -1,
-  "workbench.colorTheme": "Gruvbox Dark (Hard)",
   "files.insertFinalNewline": true,
   "window.closeWhenEmpty": false,
   "explorer.compactFolders": false,
@@ -300,7 +299,6 @@
       "codicon": "list-tree",
     }
   ],
-  "workbench.activityBar.visible": false,
   "cSpell.checkOnlyEnabledFileTypes": false,
   "cSpell.userWords": [
     "recombee"

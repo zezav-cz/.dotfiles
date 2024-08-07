@@ -43,11 +43,11 @@ alias sudo='sudo '
 alias app='aptitude '
 
 export NVM_DIR="$HOME/.nvm"
-. <(flux completion zsh)
+#. <(flux completion zsh)
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
-source ~/.zfunc/_rcli
+#source ~/.zfunc/_rcli
