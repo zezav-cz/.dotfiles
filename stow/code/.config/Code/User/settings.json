@@ -30,7 +30,7 @@
   "editor.autoClosingBrackets": "languageDefined",
   "editor.insertSpaces": true,
   "editor.formatOnSave": true,
-  "diffEditor.renderSideBySide": true,
+  "diffEditor.renderSideBySide": false,
   "editor.cursorSurroundingLines": 8,
   "editor.inlineSuggest.enabled": true,
   "files.autoSave": "afterDelay",
@@ -250,7 +250,7 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[jsonnet]": {
-    "editor.defaultFormatter": "Grafana.vscode-jsonnet"
+    "editor.defaultFormatter": "cverge.jsonnet-lsp"
   },
   "git.autofetch": true,
   "debug.console.fontSize": 12,
@@ -301,12 +301,17 @@
   ],
   "cSpell.checkOnlyEnabledFileTypes": false,
   "cSpell.userWords": [
-    "recombee"
+    "Creds",
+    "fluxcd",
+    "recombee",
+    "storegateway",
+    "thanos"
   ],
   "[python]": {
-    "editor.defaultFormatter": "ms-python.autopep8"
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "vs-kubernetes": {
     "vs-kubernetes.minikube-show-information-expiration": "2024-04-02T12:56:01.868Z"
   },
+  "redhat.telemetry.enabled": true,
 }

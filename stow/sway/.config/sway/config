@@ -31,3 +31,9 @@ include $HOME/.config/sway/config.d/*.conf
 # Include nwg-displays config's (if exists)
 include ~/.config/sway/outputs
 include ~/.config/sway/workspaces
+
+
+bindsym --release XF86Sleep exec swaymsg output <LID-OUTPUT-NAME> disable
+bindsym --release XF86WakeUp exec swaymsg output <LID-OUTPUT-NAME> enable
+
+output * bg ~//Pictures/bg.jpg fill

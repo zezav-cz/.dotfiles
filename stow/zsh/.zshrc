@@ -50,4 +50,6 @@ export NVM_DIR="$HOME/.nvm"
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
-#source ~/.zfunc/_rcli
+source ~/.zfunc/*
+export TERM=xterm-256color
+
