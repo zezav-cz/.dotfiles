@@ -1,4 +1,4 @@
-export PATH=$HOME/.bin:/usr/local/bin:$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/go/bin:/snap/bin
+export PATH=$HOME/.bin:/usr/local/bin:$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/bin:/snap/bin
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
@@ -30,7 +30,7 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 # Aliases
 alias l='ls -l '
-alias vim='nvim '
+#alias vim='nvim '
 alias ll='ls -la '
 alias gg='g++ -Wall -pedantic-errors '
 alias ggs='g++ -Wall -pedantic-errors -g -fsanitize=address '
@@ -50,6 +50,6 @@ export NVM_DIR="$HOME/.nvm"
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
-source ~/.zfunc/*
+#source ~/.zfunc/*
 export TERM=xterm-256color
 

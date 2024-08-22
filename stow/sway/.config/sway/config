@@ -35,5 +35,6 @@ include ~/.config/sway/workspaces
 
 bindsym --release XF86Sleep exec swaymsg output <LID-OUTPUT-NAME> disable
 bindsym --release XF86WakeUp exec swaymsg output <LID-OUTPUT-NAME> enable
-
-output * bg ~//Pictures/bg.jpg fill
+bar { 
+     swaybar_command waybar
+}
