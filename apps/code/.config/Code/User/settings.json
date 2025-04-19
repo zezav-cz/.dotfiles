@@ -1,0 +1,140 @@
+{
+  // editor
+  "editor.fontSize": 13,
+  "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.horizontal": "hidden", // Disable minimap
+  "editor.renderWhitespace": "all",
+  "editor.matchBrackets": "always", // Highlight matching brackets
+  "diffEditor.renderSideBySide": false, // Show diff in one column
+  "files.insertFinalNewline": true, // Insert newline at the end of file
+  "workbench.tips.enabled": false,
+  "editor.linkedEditing": true, // Enable linked editing
+  // Suggestions
+  "editor.wordBasedSuggestions": "allDocuments", // Suggestions from all opened documents
+  "editor.acceptSuggestionOnEnter": "smart", // Accept suggestion on enter key
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  // appereance
+  "workbench.colorTheme": "Gruvbox Dark (Hard)",
+  "trailing-spaces.borderColor": "rgba(255,0,0,0.3)",
+  "trailing-spaces.backgroundColor": "rgba(0,0,0,0)",
+  "editor.roundedSelection": false, // in vim visual mode
+  "editor.renderLineHighlight": "none", // Disable active line highlight
+  "editor.cursorBlinking": "solid", // Do not use blinking cursor
+  "editor.cursorSurroundingLines": 8, // Show 8 lines above and below the cursor
+  "explorer.compactFolders": true,
+  "editor.fontFamily": "MesloLGS Nerd Font Mono",
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.overviewRulerBorder": false, // Hide status bar
+  "breadcrumbs.enabled": false, // Hide breadcrumbs (file path at the top)
+  "workbench.iconTheme": "material-icon-theme",
+  "zenMode.hideLineNumbers": false,
+  "zenMode.showTabs": "multiple",
+  "editor.lineNumbers": "relative",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#303030",
+    "statusBar.foreground": "#ffffff",
+  },
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "window.menuBarVisibility": "compact",
+  "window.titleBarStyle": "native",
+
+  // general
+  "files.autoSave": "afterDelay",
+  "window.openFilesInNewWindow": "on",
+  // terminal
+  "terminal.integrated.fontFamily": "MesloLGS Nerd Font Mono",
+  "editor.minimap.enabled": false,
+
+  // VIM
+  "vim.leader": "<space>",
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "#a9dc7660",
+  "vim.highlightedyank.duration": 250,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": false,
+  "vim.insertModeKeyBindings": [
+    { "before": [ "j", "j" ], "after": [ "<Esc>" ] } // jj to esc
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": [ "<C-h>" ], "commands": [ ":bprevious" ] }, // Ctrl + h to go to previous buffer (tab)
+    { "before": [ "<C-l>" ], "commands": [ ":bnext" ] }, // Ctrl + l to go to next buffer (tab)
+    { "before": [ "leader", "v" ], "commands": [ ":vsplit" ] },
+    { "before": [ "leader", "s" ], "commands": [ ":split" ] },
+    { "before": [ "leader", "q" ], "commands": [ ":q" ] },
+    { "before": [ "leader", "h" ], "commands": [ "workbench.action.navigateLeft" ] },
+    { "before": [ "leader", "j" ], "commands": [ "workbench.action.navigateDown" ] },
+    { "before": [ "leader", "k" ], "commands": [ "workbench.action.navigateUp" ] },
+    { "before": [ "leader", "l" ], "commands": [ "workbench.action.navigateRight" ] },
+    { "before": [ "leader", "f" ], "commands": [ "editor.action.formatDocument" ] }, // format document
+    { "before": [ "leader", "p", "f" ], "commands": [ "workbench.action.quickOpen" ] },
+    { "before": [ "<C-d>" ], "after": [ "<C-d>", "z", "z" ] },
+    { "before": [ "<C-u>" ], "after": [ "<C-u>", "z", "z" ] },
+    { "before": [ "leader", "g", "i" ], "commands": [ "editor.action.revealDefinition" ] }, // go to
+    { "before": [ "leader", "g", "d" ], "commands": [ "editor.action.revealDeclaration" ] }, // go to
+    { "before": [ "leader", "d", "r" ], "commands": [ "editor.action.goToReferences" ] }, // go to
+    { "before": [ "leader", "s", "i" ], "commands": [ "editor.action.peekDefinition" ] }, // peek
+    { "before": [ "leader", "s", "d" ], "commands": [ "editor.action.peekDeclaration" ] }, // peek
+    { "before": [ "leader", "s", "r" ], "commands": [ "editor.action.referenceSearch.trigger" ] }, // peek
+
+  ],
+  "vim.visualModeKeyBindings": [
+    // Stay in visual mode while indenting
+    { "before": [ "<" ], "commands": [ "editor.action.outdentLines" ] },
+    { "before": [ ">" ], "commands": [ "editor.action.indentLines" ] },
+    // Move selected lines while staying in visual mode
+    { "before": [ "J" ], "commands": [ "editor.action.moveLinesDownAction" ] },
+    { "before": [ "K" ], "commands": [ "editor.action.moveLinesUpAction" ] },
+    { "before": [ "leader", "c" ], "commands": [ "editor.action.commentLine" ] }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+
+  // extensions
+
+  // git
+  "git.autorefresh": true,
+  // error lens
+  "errorLens.enableOnDiffView": true,
+  "errorLens.fontStyleItalic": true,
+  "errorLens.gutterIconsEnabled": false,
+  "errorLens.messageTemplate": "$message $count",
+  "errorLens.messageBackgroundMode": "none",
+
+  // language spcific
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false
+  },
+  "json.format.keepLines": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false
+  },
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[yaml]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+}

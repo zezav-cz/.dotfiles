@@ -1,0 +1,28 @@
+version: '3'
+
+vars:
+  NORMAL: foot git sway tmux vim
+  NO_FOPLD: code k9s ssh zsh
+
+tasks:
+  default:
+    desc: List all tasks
+    cmds:
+      - task --list-all
+    silent: true
+
+  stow:
+    desc: Link dotfiles
+    dir: apps
+    cmds:
+      - stow -v -t ~ --override=".zshrc" {{ .NORMAL }}
+      - stow -v -t ~ --no-folding {{ .NO_FOPLD }}
+    silent: true
+
+  unstow:
+    desc: Unlink dotfiles
+    dir: apps
+    cmds:
+      - stow -v -t ~ -D {{ .NORMAL }} {{ .NO_FOPLD }}
+    silent: true
+

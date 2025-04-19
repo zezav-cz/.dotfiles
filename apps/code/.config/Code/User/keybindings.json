@@ -1,0 +1,48 @@
+// Place your key bindings in this file to override the defaults
+[
+    // terminal
+    {
+        "key": "ctrl+t",
+        "command": "-workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    // activity binaryPath
+    // Toggle Activity Bar visibility with Ctrl+`
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    // Toggle Explorer (Ctrl+1)
+    {
+        "key": "ctrl+1",
+        "command": "workbench.view.explorer"
+    },
+    // Toggle Search (Ctrl+2)
+    {
+        "key": "ctrl+2",
+        "command": "workbench.view.search"
+    },
+    // Toggle Source Control (Ctrl+3)
+    {
+        "key": "ctrl+3",
+        "command": "workbench.view.scm"
+    },
+    // Toggle Run & Debug (Ctrl+4)
+    {
+        "key": "ctrl+4",
+        "command": "workbench.view.debug"
+    },
+    // Toggle Extensions (Ctrl+5)
+    {
+        "key": "ctrl+5",
+        "command": "workbench.view.extensions"
+    },
+    // (Optional) Toggle Remote Explorer (Ctrl+6)
+    {
+        "key": "ctrl+6",
+        "command": "workbench.action.chat.openEditSession",
+    },
+]
