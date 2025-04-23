@@ -2,7 +2,7 @@ version: '3'
 
 vars:
   NORMAL: foot git sway tmux vim
-  NO_FOPLD: code k9s ssh zsh
+  NO_FOPLD: code ssh zsh
 
 tasks:
   default:
@@ -15,14 +15,15 @@ tasks:
     desc: Link dotfiles
     dir: apps
     cmds:
-      - stow -v -t ~ --override=".zshrc" {{ .NORMAL }}
+      - stow --adopt -v -t ~ {{ .NORMAL }}
+      - stow --adopt -v -t ~ --no-folding {{ .NO_FOPLD }}
+      - git restore .
+      - stow -v -t ~ {{ .NORMAL }}
       - stow -v -t ~ --no-folding {{ .NO_FOPLD }}
-    silent: true
 
   unstow:
     desc: Unlink dotfiles
     dir: apps
     cmds:
       - stow -v -t ~ -D {{ .NORMAL }} {{ .NO_FOPLD }}
-    silent: true
 
