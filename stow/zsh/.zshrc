@@ -21,17 +21,14 @@ autoload -U +X bashcompinit && bashcompinit
 autoload -U compinit; compinit
 complete -o nospace -C /usr/bin/terraform terraform
 
-RPROMPT='$(kube_ps1)'
 
 # EVS
-export EDITOR="/snap/bin/nvim"
+export EDITOR="/usr/bin/vim.basic"
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 # Aliases
 alias l='ls -l '
-alias vim='nvim '
-alias vimr='nvim -R'
 alias bat='batcat '
 alias f='firefox '
 alias ll='ls -la '
@@ -57,3 +54,17 @@ fpath+=~/.zfunc
 export TERM=xterm-256color
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 eval "$(task --completion zsh)"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# append completions to fpath
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
+
+function nix_profile_prompt() {
+  local profile
+  profile=$(readlink ~/.nix-profile)
+  echo "${profile##*/}"
+}
+
+RPROMPT='$(kube_ps1) $(nix_profile_prompt)'
+eval "$(/usr/bin/mise activate zsh)"

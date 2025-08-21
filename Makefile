@@ -1,26 +1,47 @@
-# create string variable
-PRE=zsh
-NORMAL=git mc nvim tmux vim systemd
-NO_FOPLDING=code ssh zsh
+STOW_DIR     := apps
+TARGET_DIR   ?= $(HOME)
+PACKAGES     := $(notdir $(wildcard $(STOW_DIR)/*))
+STOW         := stow --dir=$(STOW_DIR) --target=$(TARGET_DIR)
+COMMON_FLAGS := -v
+code_FLAGS   := --no-folding
+ssh_FLAGS    := --no-folding
+zsh_FLAGS    := --no-folding --override=".zshrc"
+.PHONY: all install uninstall restow list help
 
-.PHONY: stow unstow gnome stow-adopt lxqt
-stow:
-	stow -v -t ~ -d stow/ $(NORMAL)
-	stow -v -t ~ -d stow/ --no-folding $(NO_FOPLDING)
-stow-adopt:
-	stow -v -t ~ -d stow/ --adopt --no-folding $(PRE)
-	git reset --hard HEAD
-	stow -v -t ~ -d stow/ $(NORMAL)
-	stow -v -t ~ -d stow/ --no-folding $(NO_FOPLDING)
+all: install
+install: $(PACKAGES)
 
-unstow:
-	stow -v -t ~ -d stow/ -D $(NORMAL) $(NO_FOPLDING)
+uninstall: $(addsuffix -uninstall, $(PACKAGES))
+restow: $(addsuffix -restow, $(PACKAGES))
 
-gnome:
-	dconf load /org/ < ./gnome/dconf-settings.toml
-	echo "options snd-hda-intel model=alc255-acer,dell-headset-multi" | sudo tee -a /etc/modprobe.d/alsa-base.conf
+$(PACKAGES):
+	@echo "Installing '$@'..."
+	$(STOW) $(COMMON_FLAGS) $($@_FLAGS) $@
 
-lxqt:
-	stow -v -t ~ -d stow/ --adopt lxqt
-	git reset --hard HEAD
-	stow -v -t ~ -d stow/ lxqt
+$(addsuffix -uninstall, $(PACKAGES)): %-uninstall:
+	@echo "Uninstalling '$*'..."
+	$(STOW) $(COMMON_FLAGS) -D $*
+
+$(addsuffix -restow, $(PACKAGES)): %-restow:
+	@echo "Restowing (re-installing) '$*'..."
+	$(STOW) $(COMMON_FLAGS) -R $*
+
+list:
+	@echo "Available packages:"
+	@$(foreach pkg,$(PACKAGES),echo "  - $(pkg)";)
+
+help:
+	@echo "Usage: make [target]"
+	@echo ""
+	@echo "Global targets:"
+	@echo "  install          Install all packages."
+	@echo "  uninstall        Uninstall all packages."
+	@echo "  restow           Re-install all packages."
+	@echo "  list             List all available packages."
+	@echo ""
+	@echo "Individual package targets (replace 'pkg' with a package name from the list):"
+	@echo "  make pkg         Install a specific package."
+	@echo "  make pkg-uninstall Uninstall a specific package."
+	@echo "  make pkg-restow    Re-install a specific package."
+	@echo ""
+	@echo "Example: 'make nvim' or 'make git-uninstall'"

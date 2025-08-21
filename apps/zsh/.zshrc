@@ -44,6 +44,7 @@ alias x='xdg-open '
 alias tf='terraform '
 alias sudo='sudo '
 alias app='aptitude '
+alias bcat='/usr/bin/batcat'
 
 export NVM_DIR="$HOME/.nvm"
 #. <(flux completion zsh)

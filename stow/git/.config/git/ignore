@@ -1,0 +1,9 @@
+.env
+dist
+.venv
+venv
+.task
+__pycache__
+flake.nix
+.tool-versions
+lefthook-local.yml

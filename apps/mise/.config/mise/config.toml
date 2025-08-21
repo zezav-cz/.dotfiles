@@ -1,0 +1,12 @@
+[tools]
+neovim = "0.11"
+pre-commit = "4"
+k9s = "0.50"
+markdownlint-cli2 = "0.14"
+yamllint = "1"
+yamlfmt = "0.17"
+lefthook = "1.12"
+editorconfig-checker = "3.3"
+
+[settings]
+idiomatic_version_file_enable_tools = []
