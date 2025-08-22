@@ -1,0 +1,13 @@
+[Unit]
+Description=User SSH Agent
+Documentation=man:ssh-agent(1)
+After=default.target
+
+[Service]
+Type=simple
+Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
+ExecStart=/usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

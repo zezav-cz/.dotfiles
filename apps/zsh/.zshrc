@@ -1,9 +1,10 @@
-export PATH=$HOME/.bin:/usr/local/bin:$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/go/bin:/snap/bin
+# Core
+export PATH=$HOME/.bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-HIST_STAMPS="dd.mm.yyyy"
+COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f" # show a waiting message when completion is delayed
+
 plugins=(
     git
     tmux
@@ -15,46 +16,22 @@ plugins=(
     kubectl
     emoji
     )
-source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh # loads zsh and its plugins
+
+# Completion
 autoload -U compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 autoload -U compinit; compinit
-complete -o nospace -C /usr/bin/terraform terraform
-
-RPROMPT='$(kube_ps1)'
-
-# EVS
-export EDITOR="/snap/bin/nvim"
-export LIBVIRT_DEFAULT_URI="qemu:///system"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
-# Aliases
-alias l='ls -l '
-alias vim='nvim '
-alias vimr='nvim -R'
-alias bat='batcat '
-alias f='firefox '
-alias ll='ls -la '
-alias gg='g++ -Wall -pedantic-errors '
-alias ggs='g++ -Wall -pedantic-errors -g -fsanitize=address '
-alias vs='code ./'
-alias py='python3 -q '
-alias t='tmux '
-alias x='xdg-open '
-alias tf='terraform '
-alias sudo='sudo '
-alias app='aptitude '
-alias bcat='/usr/bin/batcat'
-
-export NVM_DIR="$HOME/.nvm"
-#. <(flux completion zsh)
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 autoload -Uz compinit
 zstyle ':completion:*' menu select
-fpath+=~/.zfunc
-#source ~/.zfunc/_rcli
+
+# Appearance
+RPROMPT='$(kube_ps1)'
+PROMPT='[%F{yellow}%M%f] '"$PROMPT"
 export TERM=xterm-256color
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-eval "$(task --completion zsh)"
+
+# Aliases
+alias vs='code ./'
+alias py='python3 -q '
+alias x='xdg-open '
+alias app='aptitude '

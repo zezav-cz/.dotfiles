@@ -1,0 +1,172 @@
+{
+    // "layer": "top", // Waybar at top layer
+     "position": "top", // Waybar position (top|bottom|left|right)
+    //"height": 24, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": [
+        "sway/workspaces", 
+        "sway/mode"
+    ],
+    "modules-center": [
+        "sway/window"
+        //"custom/wf-recorder"
+    ],
+    "modules-right": [
+    "custom/weather",
+    "custom/wlsunset",
+    "custom/playerctl",
+    "custom/dnd",
+    "custom/clipboard",
+        "idle_inhibitor",
+        "sway/language",
+        "pulseaudio",
+        "network",
+        //"bluetooth",
+        "cpu",
+        "memory",
+        "battery",
+        "clock",
+    "custom/power",
+        "tray"
+    ],
+    "custom/power": {
+        "format": "",
+        "on-click": "nwg-bar -x"
+    },
+    "custom/playerctl": {
+        "interval": "once",
+        "tooltip": true,
+        "return-type": "json",
+        "format": "{icon}",
+        "format-icons": {"Playing": "","Paused": ""},
+        "exec": "playerctl metadata --format '{\"alt\": \"{{status}}\", \"tooltip\": \"{{playerName}}:  {{markup_escape(title)}} - {{markup_escape(artist)}}\" }'",
+        "on-click": "playerctl play-pause; pkill -RTMIN+5 waybar",
+        "on-click-right": "playerctl next; pkill -RTMIN+5 waybar",
+        "on-scroll-up": "playerctl position 10+; pkill -RTMIN+5 waybar",
+        "on-scroll-down": "playerctl position 10-; pkill -RTMIN+5 waybar",
+        "signal": 5
+    },
+    "custom/dnd": {
+        "interval": "once",
+        "return-type": "json",
+        "format": "{}{icon}",
+        "format-icons": {"default": "","dnd": ""},
+        "on-click": "makoctl mode | grep 'do-not-disturb' && makoctl mode -r do-not-disturb || makoctl mode -a do-not-disturb; pkill -RTMIN+11 waybar",
+        "exec": "printf '{\"alt\":\"%s\",\"tooltip\":\"Notification mode: %s\"}' $(makoctl mode | grep -q 'do-not-disturb' && echo dnd || echo default) $(makoctl mode | tail -1)",
+        "signal": 11
+    },
+    "custom/clipboard": {
+        "format": "",
+        "interval": "once",
+        "return-type": "json",
+        "on-click": "swaymsg -q exec '$clipboard'; pkill -RTMIN+9 waybar",
+        "on-click-right": "swaymsg -q exec '$clipboard-del'; pkill -RTMIN+9 waybar",
+        "on-click-middle": "rm -f ~/.cache/cliphist/db; pkill -RTMIN+9 waybar",
+        "exec": "printf '{\"tooltip\":\"%s\"}' $(cliphist list | wc -l)' item(s) in the clipboard\r(Mid click to clear)'",
+        "exec-if": "[ -x \"$(command -v cliphist)\" ] && [ $(cliphist list | wc -l) -gt 0 ]",
+        "signal": 9
+    },
+    "custom/wlsunset": {
+        "interval": "once",
+        "tooltip": true,
+        "tooltip-format": "{tooltip}",
+        "return-type": "json",
+        "format": "{icon}",
+        "format-icons": {"on": "","off": ""},
+        "exec": "fallback_latitude=50.1 fallback_longitude=8.7 latitude= longitude= /usr/share/sway/scripts/sunset.sh",
+        "on-click": "/usr/share/sway/scripts/sunset.sh toggle; pkill -RTMIN+6 waybar",
+        "exec-if": "/usr/share/sway/scripts/sunset.sh check",
+        "signal": 6
+    },
+    "custom/weather": {
+        "icon-size": 42,
+        "format": "{icon} {}",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "/usr/share/sway/scripts/weather.py",
+        "return-type": "json",
+        "format-icons": {
+           "Unknown": "✨",
+           "Cloudy": "",
+           "Fog": "🌫",
+           "HeavyRain": "🌧",
+           "HeavyShowers": "🌧",
+           "HeavySnow": "❄️",
+           "HeavySnowShowers": "❄️",
+           "LightRain": "🌦",
+           "LightShowers": "🌦",
+           "LightSleet": "🌧",
+           "LightSleetShowers": "🌧",
+           "LightSnow": "🌨",
+           "LightSnowShowers": "🌨",
+           "PartlyCloudy": "⛅️",
+           "Sunny": "☀️",
+           "ThunderyHeavyRain": "🌩",
+           "ThunderyShowers": "⛈",
+           "ThunderySnowShowers": "⛈",
+           "VeryCloudy": ""
+        }
+    },
+
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format": "{icon}",
+        "format-icons": {"1": "1","2": "2","3": "3","4": "4","5": "5"}
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/language": {
+        "on-click": "swaymsg input $(swaymsg -t get_inputs --raw | jq '[.[] | select(.type == \"keyboard\")][0] | .identifier') xkb_switch_layout next"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {"activated": "","deactivated": ""}
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%e %b %H:%M}",
+        "on-click": "swaymsg exec \\$calendar"
+    },
+    "cpu": {
+        "format": "{load} ",
+        "tooltip": true,
+        "on-click": "swaymsg exec \\$term_float htop"
+    },
+    "memory": {
+        "format": "{}% ",
+        "on-click": "swaymsg exec \\$term_float htop"
+    },
+    "battery": {
+        "states": {"good": 95,"warning": 30,"critical": 15},
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% {icon}",
+        "format-plugged": "{capacity}% {icon}",
+        "format-alt": "{time} ",
+        "format-icons": ["","","","",""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": " {volume}%  {format_source}",
+        "format-bluetooth": "{volume}%  {format_source}",
+        "format-bluetooth-muted": " {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "on-click": "swaymsg exec \\$pulseaudio",
+    }
+}
