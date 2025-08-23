@@ -1,27 +1,14 @@
 set $mod Mod1
-
-set $theme $HOME/.config/sway/themes/yaru-sway
-
-include $theme
-
-# Global variables
-include $HOME/.config/sway/variables
-
-set $term foot
-set $menu wmenu-run
-
-# User variables
+set $theme /usr/share/sway/theme/yaru-sway
+include $theme/variables
+include /etc/sway/variables
 include $HOME/.config/sway/variables.d/*.conf
-
-# Outputs and inputs
+include /etc/sway/outputs.d/*.conf
+include /etc/sway/inputs.d/*.conf
 include $HOME/.config/sway/outputs.d/*.conf
 include $HOME/.config/sway/inputs.d/*.conf
-
-# Modes
-include $HOME/.config/sway/modes/*.conf
-
+include /etc/sway/modes/*.conf
 include $HOME/.config/sway/config.d/*.conf
-
-bar { 
-     swaybar_command waybar
+bar {
+  swaybar_command waybar
 }

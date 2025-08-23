@@ -1,0 +1,10 @@
+configuration {
+    modes: "window,drun,run,ssh,combi";
+    show-icons: true;
+    ssh-client: "ssh";
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+}
+@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
